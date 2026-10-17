@@ -1,6 +1,6 @@
-NMAE-Piyush Kumar Singh
-Roll No-2300970100132
-email-Piyushsingh7984@gmail.com
+NMAE :-Piyush Kumar Singh
+Roll No :-2300970100132
+Email :-Piyushsingh7984@gmail.com
 
 
 DEMO-https://gorgeous-crepe-1cf8c5.netlify.app/desktop.html
