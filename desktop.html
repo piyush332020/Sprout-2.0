@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sprout — Desktop Investing Experience from ₹100</title>
+  <meta name="description" content="Sprout Desktop: Simple, regulated micro-investing platform for India's first-time investors. Start from ₹100.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="desktop.css">
+</head>
+<body class="desktop-body">
+
+  <!-- Desktop Top Switcher Bar (Quick jump to Mobile) -->
+  <aside class="desktop-portal-banner">
+    <div class="banner-inner">
+      <span>🖥️ <strong>Desktop View</strong> (1440px Wide Layout)</span>
+      <a href="mobile.html" onclick="switchToMobileView()" class="portal-link">Switch to Dedicated Mobile View (360px) 📱 ➔</a>
+    </div>
+  </aside>
+
+  <!-- 1. Header (Sticky) -->
+  <header class="d-header">
+    <div class="d-header-inner">
+      <a href="#hero" class="d-logo">
+        <svg viewBox="0 0 40 40" width="34" height="34" fill="none">
+          <path d="M20 7C16 13 13 19 13 25C13 29 16 32 20 32C24 32 27 29 27 25C27 19 24 13 20 7Z" fill="#2D9F6F"/>
+          <path d="M20 8C21.5 5 24 3 27 3C27 6.5 24 8.5 20 8Z" fill="#4ED49A"/>
+          <circle cx="17.5" cy="22.5" r="1.5" fill="#1A1A2E"/>
+          <circle cx="22.5" cy="22.5" r="1.5" fill="#1A1A2E"/>
+        </svg>
+        <span class="d-brand-text">Sprout</span>
+      </a>
+
+      <nav class="d-nav">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#why-sprout">Why Sprout</a>
+        <a href="#checklist">Pre-KYC Checklist</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="d-header-right">
+        <div class="d-lang-box">
+          <button class="d-lang-btn active" onclick="setDesktopLang('en')">EN</button>
+          <span>/</span>
+          <button class="d-lang-btn" onclick="setDesktopLang('hi')">हिन्दी</button>
+        </div>
+        <button class="d-cta-nav" onclick="openDesktopOnboarding(1)">Start with ₹100</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. SEBI Compliance Disclaimer Strip (12px, Above Fold) -->
+  <aside class="d-disclaimer-strip">
+    <div class="d-disclaimer-inner">
+      <span class="d-disclaimer-badge">SEBI NOTICE</span>
+      <p>Investments are subject to market risks. Read all scheme-related documents carefully before investing.</p>
+    </div>
+  </aside>
+
+  <!-- 3. Desktop 2-Column Hero Section -->
+  <section class="d-hero" id="hero">
+    <div class="d-hero-inner">
+      <div class="d-hero-col-left">
+        <div class="d-pill-badge">
+          <span class="pulse-dot"></span>
+          SEBI Regulated · Start with just ₹100
+        </div>
+        <h1 class="d-hero-title">
+          Your first investment starts at <span class="green-text">₹100</span>
+        </h1>
+        <p class="d-hero-subtitle">
+          No financial jargon. No confusing charts. You stay in control with transparent, regulated micro-investing built for first-time wealth creators in India.
+        </p>
+
+        <div class="d-hero-cta-row">
+          <button class="d-primary-cta" onclick="openDesktopOnboarding(1)">
+            <span>Start Investing in About 5 Minutes</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-6-6l6 6-6 6"/></svg>
+          </button>
+          <div class="d-cta-reassurance">
+            <span>⏱ About 5 min setup</span>
+            <span>•</span>
+            <span>🔒 Your data is encrypted</span>
+          </div>
+        </div>
+
+        <div class="d-trust-row">
+          <div class="d-trust-stat">
+            <strong>₹100</strong>
+            <small>Minimum to start</small>
+          </div>
+          <div class="d-stat-divider"></div>
+          <div class="d-trust-stat">
+            <strong>About 5 min</strong>
+            <small>Setup</small>
+          </div>
+          <div class="d-stat-divider"></div>
+          <div class="d-trust-stat">
+            <strong>0%</strong>
+            <small>Opening fee</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mascot Column (Sproutie Welcome State) -->
+      <div class="d-hero-col-right">
+        <div class="d-mascot-card">
+          <div class="d-card-glow"></div>
+          <svg class="d-hero-mascot-svg" viewBox="0 0 160 160" fill="none">
+            <path d="M80 24C62 52 48 82 48 102C48 120 62.3 134 80 134C97.7 134 112 120 112 102C112 82 98 52 80 24Z" fill="#2D9F6F"/>
+            <path d="M80 30C86 20 98 12 112 12C112 26 100 32 80 30Z" fill="#4ED49A"/>
+            <path d="M80 30C74 22 64 18 52 20C53 32 64 34 80 30Z" fill="#24825A" opacity="0.85"/>
+            <circle cx="67" cy="94" r="5" fill="#1A1A2E"/>
+            <circle cx="93" cy="94" r="5" fill="#1A1A2E"/>
+            <circle cx="68.5" cy="92.5" r="1.5" fill="#FFFFFF"/>
+            <circle cx="94.5" cy="92.5" r="1.5" fill="#FFFFFF"/>
+            <path d="M74 107C77.5 111 82.5 111 86 107" stroke="#1A1A2E" stroke-width="3" stroke-linecap="round"/>
+            <path d="M112 98C120 94 126 88 129 79C125 80 120 83 112 90" fill="#2D9F6F"/>
+          </svg>
+          <div class="d-tag-float top">🌱 Start small from ₹100</div>
+          <div class="d-tag-float bottom">🛡️ SEBI Regulated</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. How It Works (3 Columns Horizontal) -->
+  <section class="d-section" id="how-it-works">
+    <div class="d-section-inner">
+      <div class="d-section-header">
+        <span class="d-sub-tag">SIMPLE PROCESS</span>
+        <h2 class="d-section-title">How Sprout Works in 3 Steps</h2>
+        <p class="d-section-desc">We removed the complex paperwork so you can invest with total clarity.</p>
+      </div>
+
+      <div class="d-steps-grid">
+        <div class="d-step-card">
+          <div class="d-step-number">01</div>
+          <h3>Sign Up in 60s</h3>
+          <p>Verify your phone number with a quick 6-digit OTP code. No complex passwords.</p>
+        </div>
+
+        <div class="d-step-card">
+          <div class="d-step-number">02</div>
+          <h3>Digital Identity KYC</h3>
+          <p>Confirm your PAN and Aadhaar number online. Instant paperless check via UIDAI.</p>
+        </div>
+
+        <div class="d-step-card highlight">
+          <div class="d-step-number">03</div>
+          <h3>Invest Your First ₹100</h3>
+          <p>Deposit ₹100 via UPI (Google Pay, PhonePe, Paytm). Your money starts working today.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Why Sprout (4 Horizontal Columns) -->
+  <section class="d-section alt-bg" id="why-sprout">
+    <div class="d-section-inner">
+      <div class="d-section-header">
+        <span class="d-sub-tag">WHY SPROUT</span>
+        <h2 class="d-section-title">Built for Cautious First-Time Investors</h2>
+        <p class="d-section-desc">Designed to give you institutional peace of mind with total transparency.</p>
+      </div>
+
+      <div class="d-features-grid">
+        <div class="d-feat-box">
+          <div class="feat-icon">🏛️</div>
+          <h3>SEBI Regulated</h3>
+          <p>Operating under the official regulatory framework of SEBI and follows SEBI rules.</p>
+        </div>
+
+        <div class="d-feat-box">
+          <div class="feat-icon">☕</div>
+          <h3>₹100 Micro-Commitment</h3>
+          <p>Less than a cup of chai a day. Test investing and build habits without scary financial risk.</p>
+        </div>
+
+        <div class="d-feat-box">
+          <div class="feat-icon">⚡</div>
+          <h3>Withdraw Anytime</h3>
+          <p>You stay in full control. Transfer your balance back to your bank account with zero lock-in.</p>
+        </div>
+
+        <div class="d-feat-box">
+          <div class="feat-icon">🔐</div>
+          <h3>Data Encryption</h3>
+          <p>Your data is encrypted to ensure your personal and banking information remains confidential.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Pre-KYC Checklist (Wide Card) -->
+  <section class="d-section" id="checklist">
+    <div class="d-section-inner">
+      <div class="d-checklist-wrapper">
+        <div class="d-checklist-content">
+          <span class="d-sub-tag">PRE-REGISTRATION</span>
+          <h2 class="d-checklist-title">Keep These Ready Before You Start</h2>
+          <p class="d-checklist-p">Having these ready helps you finish in about 5 minutes:</p>
+
+          <div class="d-check-rows">
+            <div class="d-c-row">
+              <span class="d-check-mark">✓</span>
+              <div>
+                <strong>1. Physical PAN Card</strong>
+                <p>10-character alphanumeric PAN (e.g. ABCDE1234F) required for tax compliance.</p>
+              </div>
+            </div>
+
+            <div class="d-c-row">
+              <span class="d-check-mark">✓</span>
+              <div>
+                <strong>2. 12-Digit Aadhaar Number</strong>
+                <p>Used for online identity verification via government UIDAI records.</p>
+              </div>
+            </div>
+
+            <div class="d-c-row">
+              <span class="d-check-mark">✓</span>
+              <div>
+                <strong>3. Phone Linked to Aadhaar</strong>
+                <p>Ensure the mobile device receiving your UIDAI OTP code is with you.</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="d-primary-cta" onclick="openDesktopOnboarding(2)">
+            I Have These Ready ➔
+          </button>
+        </div>
+
+        <div class="d-checklist-mascot">
+          <svg viewBox="0 0 140 140" width="130" height="130" fill="none">
+            <path d="M70 20C54 45 42 70 42 88C42 104 54.5 116 70 116C85.5 116 98 104 98 88C98 70 86 45 70 20Z" fill="#2D9F6F"/>
+            <path d="M70 24C75 16 85 10 98 10C98 22 88 28 70 24Z" fill="#4ED49A"/>
+            <circle cx="58" cy="80" r="4.5" fill="#1A1A2E"/>
+            <circle cx="82" cy="80" r="4.5" fill="#1A1A2E"/>
+            <path d="M64 92C67 95 73 95 76 92" stroke="#1A1A2E" stroke-width="2.5" stroke-linecap="round"/>
+            <rect x="94" y="55" width="28" height="38" rx="4" fill="#FFFFFF" stroke="#2D9F6F" stroke-width="2"/>
+            <line x1="100" y1="65" x2="116" y2="65" stroke="#2D9F6F" stroke-width="2" stroke-linecap="round"/>
+            <line x1="100" y1="72" x2="116" y2="72" stroke="#8A8A9A" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <div class="d-speech-tag">"Takes about 5 minutes!"</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ Section (720px Centered) -->
+  <section class="d-section alt-bg" id="faq">
+    <div class="d-section-inner narrow">
+      <div class="d-section-header">
+        <span class="d-sub-tag">GOT QUESTIONS?</span>
+        <h2 class="d-section-title">Frequently Asked Questions</h2>
+        <p class="d-section-desc">Clear answers to help you start your investing journey with confidence.</p>
+      </div>
+
+      <div class="d-faq-list">
+        <div class="d-faq-item" onclick="toggleDesktopFaq(this)">
+          <div class="d-faq-q">Can I really start investing with only ₹100? <span>+</span></div>
+          <div class="d-faq-a">Yes. Sprout was built specifically to lower the barrier. You can start with exactly ₹100 without any mandatory monthly commitments or hidden brokerage fees.</div>
+        </div>
+
+        <div class="d-faq-item" onclick="toggleDesktopFaq(this)">
+          <div class="d-faq-q">Why do you need my PAN card and Aadhaar? <span>+</span></div>
+          <div class="d-faq-a">SEBI regulations mandate identity verification (KYC) for all investment accounts in India to protect your identity and ensure tax compliance.</div>
+        </div>
+
+        <div class="d-faq-item" onclick="toggleDesktopFaq(this)">
+          <div class="d-faq-q">Is my money locked in, or can I withdraw anytime? <span>+</span></div>
+          <div class="d-faq-a">You can withdraw your funds back to your linked bank account anytime. Withdrawals typically credit in 1–2 business days.</div>
+        </div>
+
+        <div class="d-faq-item" onclick="toggleDesktopFaq(this)">
+          <div class="d-faq-q">How long does the KYC verification take? <span>+</span></div>
+          <div class="d-faq-a">Online Aadhaar verification usually takes 30 to 60 seconds. You do not have to keep the browser open; we notify you the moment it's active.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Desktop Footer -->
+  <footer class="d-footer">
+    <div class="d-footer-inner">
+      <div class="d-footer-grid">
+        <div>
+          <div class="footer-brand">🌱 Sprout</div>
+          <p>Micro-investing made simple, transparent, and regulated for India.</p>
+          <span class="sebi-tag">SEBI Reg: INZ000293839</span>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#why-sprout">Why Sprout</a>
+          <a href="#checklist">Pre-KYC Checklist</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div>
+          <h4>Security</h4>
+          <span>256-Bit SSL Protection</span>
+          <span>SEBI Registered Intermediary</span>
+          <span>Paperless UIDAI e-KYC</span>
+        </div>
+        <div>
+          <h4>Language</h4>
+          <button class="footer-btn" onclick="setDesktopLang('en')">English</button>
+          <button class="footer-btn" onclick="setDesktopLang('hi')">हिन्दी</button>
+        </div>
+      </div>
+
+      <div class="d-footer-disclaimer">
+        <strong>Regulatory Disclaimer:</strong> Mutual fund investments are subject to market risks. Read all scheme-related documents carefully before investing. Sprout does not guarantee any specific returns. Past performance is not indicative of future returns.
+      </div>
+
+      <div class="d-footer-bottom">
+        <span>© 2026 Sprout Technologies Private Limited. All rights reserved.</span>
+        <span>Newtonite UI/UX Assignment · Galgotias University</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       THE 5 ONBOARDING SCREENS (DESKTOP MODAL EXPERIENCE)
+       ========================================================================== -->
+  <div class="d-modal-backdrop" id="d-onboarding-modal" style="display:none;">
+    <div class="d-modal-card">
+      <div class="d-ob-header">
+        <button class="d-ob-back" id="d-back-btn" onclick="desktopObBack()">←</button>
+        <div class="d-progress-track">
+          <div class="d-progress-fill" id="d-progress-fill" style="width: 20%;"></div>
+        </div>
+        <span class="d-step-label" id="d-step-text">Step 1 of 5</span>
+        <button class="d-ob-close" onclick="closeDesktopOnboarding()">✕</button>
+      </div>
+
+      <!-- Screen 1: Welcome -->
+      <div class="d-ob-pane active" id="d-screen-1">
+        <div class="d-ob-content">
+          <div class="d-ob-mascot">
+            <svg viewBox="0 0 100 100" width="80" height="80" fill="none">
+              <path d="M50 16C38 34 30 54 30 66C30 77 39 86 50 86C61 86 70 77 70 66C70 54 62 34 50 16Z" fill="#2D9F6F"/>
+              <path d="M50 20C55 13 62 8 72 8C72 18 64 22 50 20Z" fill="#4ED49A"/>
+              <circle cx="42" cy="62" r="3.5" fill="#1A1A2E"/><circle cx="58" cy="62" r="3.5" fill="#1A1A2E"/>
+              <path d="M46 70C48 72.5 52 72.5 54 70" stroke="#1A1A2E" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M70 62C75 60 79 56 81 50C78 51 75 52 70 57" fill="#2D9F6F"/>
+            </svg>
+          </div>
+          <h2>Welcome to Sprout 🌱</h2>
+          <p class="d-ob-sub">Your investing journey starts here. No jargon. No pressure. Just one simple step at a time.</p>
+
+          <div class="d-val-card">
+            <div class="val-circle">₹</div>
+            <div>
+              <strong>Start with as little as ₹100</strong>
+              <small>Less than a cup of chai a day.</small>
+            </div>
+          </div>
+
+          <div class="d-lang-select">
+            <label>Choose your language / भाषा चुनें:</label>
+            <div class="d-seg">
+              <button class="d-seg-btn active" id="d-lang-en" onclick="setDesktopObLang('en')">English ●</button>
+              <button class="d-seg-btn" id="d-lang-hi" onclick="setDesktopObLang('hi')">हिन्दी ○</button>
+            </div>
+          </div>
+
+          <button class="d-primary-cta full" onclick="desktopObNext(2)">Let's Begin ➔</button>
+          <span class="d-legal-note">ⓘ Investments are subject to market risks.</span>
+        </div>
+      </div>
+
+      <!-- Screen 2: Checklist -->
+      <div class="d-ob-pane" id="d-screen-2">
+        <div class="d-ob-content">
+          <h2>Here's what you'll need</h2>
+          <p class="d-ob-sub">Takes about 5 minutes. Let's make sure you have everything ready.</p>
+
+          <div class="d-checklist-box">
+            <div class="c-row">
+              <span class="c-icon">✓</span>
+              <div>
+                <strong>PAN Card Number</strong>
+                <p>10-character code (e.g. ABCDE1234F)</p>
+              </div>
+            </div>
+            <div class="c-row">
+              <span class="c-icon">✓</span>
+              <div>
+                <strong>Aadhaar Number</strong>
+                <p>12-digit number with phone linked for instant OTP</p>
+              </div>
+            </div>
+            <div class="c-row">
+              <span class="c-icon">✓</span>
+              <div>
+                <strong>Bank Account Details</strong>
+                <p>Account number & IFSC for withdrawals</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-time-tag">⏱ ~5 minutes start to finish</div>
+          <button class="d-primary-cta full" onclick="desktopObNext(3)">I Have These Ready ➔</button>
+          <button class="d-text-link" onclick="saveAndRemindLaterDesktop()">I need to prepare — remind me later</button>
+        </div>
+      </div>
+
+      <!-- Screen 3: Phone & OTP -->
+      <div class="d-ob-pane" id="d-screen-3">
+        <div class="d-ob-content">
+          <div id="d-phone-sub">
+            <h2>What is your mobile number?</h2>
+            <p class="d-ob-sub">We will send a one-time code to verify your account.</p>
+
+            <div class="d-form-group">
+              <label>Mobile Number</label>
+              <div class="d-phone-wrap">
+                <span class="prefix">+91</span>
+                <input type="tel" id="d-phone-val" placeholder="98765 43210" value="98765 43210" maxlength="10">
+              </div>
+            </div>
+
+            <p class="d-agreement">By continuing, you agree to our Terms of Service & Privacy Policy.</p>
+            <button class="d-primary-cta full" onclick="showDesktopOtp()">Send OTP Code ➔</button>
+          </div>
+
+          <div id="d-otp-sub" style="display:none;">
+            <h2>Enter the 6-digit code</h2>
+            <p class="d-ob-sub">Sent to <strong>+91 98765 43210</strong> <a href="#" onclick="backToDesktopPhone()">[Edit]</a></p>
+
+            <div class="d-otp-row">
+              <input type="text" maxlength="1" value="4" readonly>
+              <input type="text" maxlength="1" value="8" readonly>
+              <input type="text" maxlength="1" value="2" readonly>
+              <input type="text" maxlength="1" value="1" readonly>
+              <input type="text" maxlength="1" value="9" readonly>
+              <input type="text" maxlength="1" value="5" readonly>
+            </div>
+
+            <div class="d-resend">Didn't receive it? Resend in <strong>0:28</strong></div>
+            <button class="d-primary-cta full" onclick="desktopObNext(4)">Verify & Continue ➔</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screen 4: KYC Verification -->
+      <div class="d-ob-pane" id="d-screen-4">
+        <div class="d-ob-content">
+          <h2>Let's verify your identity</h2>
+          <p class="d-ob-sub">Required by SEBI regulations. 256-bit bank encryption.</p>
+
+          <div class="d-form-group">
+            <label>PAN Card Number</label>
+            <input type="text" class="d-input" id="d-pan" value="ABCDE1234F" maxlength="10" style="text-transform:uppercase;">
+            <div class="d-why-link" onclick="toggleDesktopWhy('why-pan-d')">Why do we ask for PAN? ▾</div>
+            <div class="d-why-panel" id="why-pan-d" style="display:none;">
+              SEBI requires PAN verification for all investment accounts to ensure tax compliance and prevent fraud.
+            </div>
+          </div>
+
+          <div class="d-form-group">
+            <label>12-Digit Aadhaar Number</label>
+            <input type="text" class="d-input" id="d-aadhaar" value="2345 6789 0123" maxlength="14">
+            <div class="d-why-link" onclick="toggleDesktopWhy('why-aadhaar-d')">Why do we ask for Aadhaar? ▾</div>
+            <div class="d-why-panel" id="why-aadhaar-d" style="display:none;">
+              Aadhaar provides instant government paperless e-KYC without branch visits.
+            </div>
+          </div>
+
+          <div class="d-consent-row">
+            <input type="checkbox" id="d-chk" checked>
+            <label for="d-chk">I authorize Sprout to verify my identity records via UIDAI and NSDL.</label>
+          </div>
+
+          <div class="d-disclaimer-box">
+            ⓘ Investments are subject to market risks. Read all scheme documents carefully.
+          </div>
+
+          <button class="d-primary-cta full" onclick="desktopObNext(5)">Verify My Identity ➔</button>
+        </div>
+      </div>
+
+      <!-- Screen 5: Waiting & Celebration -->
+      <div class="d-ob-pane" id="d-screen-5">
+        <div class="d-ob-content">
+          
+          <!-- Waiting State -->
+          <div id="d-wait-view">
+            <div class="d-pulse-mascot">
+              <svg viewBox="0 0 100 100" width="80" height="80" fill="none">
+                <path d="M50 16C38 34 30 54 30 66C30 77 39 86 50 86C61 86 70 77 70 66C70 54 62 34 50 16Z" fill="#2D9F6F"/>
+                <path d="M50 20C55 13 62 8 72 8C72 18 64 22 50 20Z" fill="#4ED49A"/>
+                <circle cx="42" cy="62" r="3" fill="#1A1A2E"/><circle cx="58" cy="62" r="3" fill="#1A1A2E"/>
+                <circle cx="36" cy="40" r="2" fill="#E5A100"/><circle cx="50" cy="35" r="2.5" fill="#E5A100"/><circle cx="64" cy="40" r="2" fill="#E5A100"/>
+              </svg>
+            </div>
+            <h2>Verifying your details</h2>
+            <p class="d-ob-sub">Usually takes 30 seconds. You can safely close this window — we will notify you when ready.</p>
+
+            <div class="d-status-list">
+              <div class="d-stat done">✓ Phone Number Verified</div>
+              <div class="d-stat done">✓ PAN Records Confirmed</div>
+              <div class="d-stat in-prog" id="d-aadhaar-stat">⟳ Verifying Aadhaar with UIDAI...</div>
+              <div class="d-stat pend" id="d-account-stat">○ Creating Your Investment Account</div>
+            </div>
+
+            <div class="d-time-tag">⏱ Estimated wait: under 60 seconds</div>
+          </div>
+
+          <!-- Celebration State -->
+          <div id="d-success-view" style="display:none;">
+            <div class="d-celebrate-mascot">
+              <svg viewBox="0 0 120 120" width="90" height="90" fill="none">
+                <path d="M60 20C46 42 36 65 36 80C36 93.2 46.8 104 60 104C73.2 104 84 93.2 84 80C84 65 74 42 60 20Z" fill="#2D9F6F"/>
+                <path d="M60 26C65 16 75 10 88 10C88 22 78 28 60 26Z" fill="#4ED49A"/>
+                <path d="M60 26C55 16 45 10 32 10C32 22 42 28 60 26Z" fill="#4ED49A"/>
+                <circle cx="50" cy="74" r="4.5" fill="#1A1A2E"/><circle cx="70" cy="74" r="4.5" fill="#1A1A2E"/>
+                <path d="M52 84C56 90 64 90 68 84Z" fill="#1A1A2E"/>
+                <circle cx="24" cy="36" r="3" fill="#E5A100"/><circle cx="96" cy="36" r="3" fill="#E85D5D"/>
+              </svg>
+            </div>
+            <h2 class="green-text">You're all set! 🎉</h2>
+            <p class="d-ob-sub">Your Sprout account is verified and ready. Start with your first ₹100 deposit.</p>
+
+            <button class="d-primary-cta full" onclick="alert('🎉 Milestone reached! Entering ₹100 first investment transaction.')">
+              Make Your First Investment (₹100) ➔
+            </button>
+            <span class="d-legal-note">ⓘ Investments are subject to market risks.</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="desktop.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sprout 2.0 — Auto-Detecting Device...</title>
+  <script>
+    (function() {
+      // 1. Check if user manually forced a view via URL query parameter (?view=mobile or ?view=desktop)
+      const params = new URLSearchParams(window.location.search);
+      const urlView = params.get('view');
+      const sessionView = sessionStorage.getItem('sprout_preferred_view');
+
+      if (urlView === 'desktop' || sessionView === 'desktop') {
+        window.location.replace('desktop.html');
+        return;
+      }
+      if (urlView === 'mobile' || sessionView === 'mobile') {
+        window.location.replace('mobile.html');
+        return;
+      }
+
+      // 2. Intelligent Auto-Detection: Screen Width & Device User Agent
+      const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const isMobileWidth = window.innerWidth <= 768;
+
+      if (isMobileUA || isMobileWidth) {
+        window.location.replace('mobile.html');
+      } else {
+        window.location.replace('desktop.html');
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: #0E1A14;
+      color: #FFF;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 24px;
+    }
+    .loader-box {
+      background: #17261E;
+      border: 1px solid rgba(78, 212, 154, 0.25);
+      border-radius: 20px;
+      padding: 32px 40px;
+      max-width: 440px;
+    }
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid rgba(45, 159, 111, 0.2);
+      border-top-color: #2D9F6F;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 16px;
+    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+    h2 { font-family: 'Outfit', sans-serif; font-size: 22px; margin: 0 0 6px; }
+    p { color: #A0B2A6; font-size: 14px; margin: 0; }
+  </style>
+</head>
+<body>
+  <div class="loader-box">
+    <div class="spinner"></div>
+    <h2>Loading Sprout 2.0</h2>
+    <p>Automatically detecting screen resolution and device...</p>
+  </div>
+</body>
+</html>
